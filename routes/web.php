@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\PostController;
+use App\Models\Post;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,8 +18,20 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::prefix('admin')->group(function (){
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->middleware(['auth'])->name('dashboard');
+    // Route::get('/users', function(){
 
+    // });
+});
+
+
+
+// Route::get('/posts', function (Post $post) {
+//     return view('posts.index', [PostController::class, 'index']);
+// });
+
+Route::resource('posts', PostController::class);
 require __DIR__.'/auth.php';

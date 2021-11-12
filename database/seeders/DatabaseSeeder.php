@@ -18,8 +18,8 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // Truncate tables, to avoid any unique erros.
-        User::truncate();
-        Post::truncate();
+        // User::truncate();
+        // Post::truncate();
 
         //  $user = User::create([
         //      'name' => Str::random(10),
