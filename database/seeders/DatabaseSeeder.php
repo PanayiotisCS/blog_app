@@ -35,6 +35,15 @@ class DatabaseSeeder extends Seeder
         //      'body' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce pellentesque, quam a commodo vehicula, lorem enim rhoncus urna, a ullamcorper turpis massa a nisl. Vivamus in luctus mauris. Etiam hendrerit sapien in enim congue ultrices. Aliquam erat volutpat. Proin at nibh tincidunt, cursus mauris in, sodales nulla. Ut at ante massa. Integer tortor lacus, cursus finibus blandit quis, egestas vel ex.'
         //  ]);
         
-        User::factory(5)->has(Post::factory(2)->has(Comment::factory(2),'comments'),'posts')->create();
+        // User::factory(5)->has(Post::factory(2)->has(Comment::factory(2),'comments'),'posts')->create();
+        
+        $admin = User::create([
+            'name' => 'Admin',
+            'email' => 'admin@admin.com',
+            'type' => '1',
+            'password' => Hash::make('password')
+        ]);
+        $user = User::factory()->create();
+        $posts = Post::factory(2)->hasComments(3)->create();
     }
 }

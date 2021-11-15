@@ -19,6 +19,8 @@
     <link rel="stylesheet" href="{{ asset('vendor/material-colors/dist/colors.css') }}">
     <!-- Application styles-->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    @include('layouts.scripts')
   </head>
   <body class="theme-default">
     <div class="min-h-screen bg-gray-100">
@@ -32,6 +34,5 @@
             </main>
         </div>
     </div>
-    @include('layouts.scripts')
   </body>
 </html>
