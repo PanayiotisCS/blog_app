@@ -7,9 +7,11 @@
     
     <section class="layout-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="container-overlap bg-gradient-primary"></div>
-        <div class="container-sm">
+        <div class="container-fluid">
             <div class="row">
-                <div class="col">
+                <div class="col-1">
+                </div>
+                <div class="col-9">
                     <?php foreach ($posts as $post) : ?>
                         <div class="card">
                             <div class="card-body">
@@ -27,14 +29,27 @@
                                     <p class="m-0 text-bold">{{ $post->user->name }}</p><small class="text-muted"><em class="ion-earth text-muted mr-2"></em><span>2 hours</span></small>
                                     </div>
                                 </div>
-                                <div class="card-textr">{{ $post->body }}</div>
+                                <div class="card-text">{{ $post->body }}</div>
                             </div>
                             <div class="card-footer">
                                 <button class="btn btn-flat btn-primary" type="button"><em class="ion-thumbsup icon-lg"></em></button>
                                 <button class="btn btn-flat btn-primary" type="button"><em class="ion-happy-outline icon-lg"></em></button>
                                 <button class="btn btn-flat btn-primary" type="button"><em class="ion-chatbubbles icon-lg"></em></button>
                             </div>
+                            <div class="media m-2 mr-auto">
+                                <div class="card-text">
+                                    {{ $post->user->name}} : 
+                                    {{ $post->title }}
+                                </div>
+                            </div>
+                            <div class="bg-light p-2">
+                                <div class="d-felx flex-row align-items-start"><textarea class="form-control ml-1 shadow-none textarea"></textarea></div>
+                                <div class="mt-2 text-right"><button class="btn btn-primary btn-sm shadow-none">Post comment</button></div>
+                            </div>
                         </div>
+                        <br>
+                        <br>
+                        <br>
                     <?php endforeach; ?>
                 </div>
             </div>
