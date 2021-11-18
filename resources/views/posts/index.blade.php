@@ -12,7 +12,7 @@
                 </div>
                 <div class="col-9">
                     <?php foreach ($posts as $post) : ?>
-                        <div class="card">
+                        <div class="cardbox">
                             <div class="card-body">
                                 {{-- <!-- START dropdown-->
                                 <div class="float-right dropdown">

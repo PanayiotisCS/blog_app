@@ -14,9 +14,6 @@ use App\Models\Post;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Route::prefix('admin')->group(function (){
     Route::get('/dashboard', function () {
@@ -27,11 +24,11 @@ Route::prefix('admin')->group(function (){
     // });
 });
 
+Route::resource('posts', PostController::class)->middleware(['auth']);
 
+Route::get('/', function () {
+    return view('welcome');
+});
 
-// Route::get('/posts', function (Post $post) {
-//     return view('posts.index', [PostController::class, 'index']);
-// });
-
-Route::resource('posts', PostController::class);
+// if the user 
 require __DIR__.'/auth.php';

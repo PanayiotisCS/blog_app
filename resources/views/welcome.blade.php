@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>{{ config('app.name', 'Blog Site') }}</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -129,4 +129,84 @@
             </div>
         </div>
     </body>
+</html> --}}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Welcome</title>
+    {{-- @include('layouts.css') --}}
+    <!-- Vendor styles-->
+    <!-- Animate.CSS-->
+    <link rel="stylesheet" href="{{ asset('vendor/animate.css/animate.css') }}">
+    <!-- Bootstrap-->
+    <link rel="stylesheet" href="{{ asset('vendor/bootstrap/dist/css/bootstrap.min.css') }}">
+    {{-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script defer src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> --}}
+    <!-- Ionicons-->
+    <link rel="stylesheet" href="{{ asset('vendor/ionicons/css/ionicons.css') }}">
+    <!-- Material Colors-->
+    <link rel="stylesheet" href="{{ asset('vendor/material-colors/dist/colors.css') }}">
+    <!-- Application styles-->
+    <link rel="stylesheet" href="{{ asset('css/app-rtl.css') }}">
+    <!-- Application styles-->
+    <link rel="stylesheet" href="{{ asset('css/dasha-app.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+
+  </head>
+  <body>
+    <div class="layout-container">
+      <div class="page-container bg-blue-grey-900">
+        <div class="d-flex align-items-center align-items-center-ie bg-gradient-primary">
+          <div class="fw">
+            <div class="container container-xs">
+              <form method="POST" action="{{ route('login') }}">
+                            @csrf
+
+                            <!-- Email Address -->
+                            <div>
+                                <x-label for="email" :value="__('Email')" />
+
+                                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
+                            </div>
+
+                            <!-- Password -->
+                            <div class="mt-4">
+                                <x-label for="password" :value="__('Password')" />
+
+                                <x-input id="password" class="block mt-1 w-full"
+                                                type="password"
+                                                name="password"
+                                                required autocomplete="current-password" />
+                            </div>
+
+                            <!-- Remember Me -->
+                            <div class="block mt-4">
+                                <label for="remember_me" class="inline-flex items-center">
+                                    <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="remember">
+                                    <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
+                                </label>
+                            </div>
+
+                            <div class="flex items-center justify-end mt-4">
+                                @if (Route::has('password.request'))
+                                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
+                                        {{ __('Forgot your password?') }}
+                                    </a>
+                                @endif
+
+                                <x-button class="ml-3">
+                                    {{ __('Log in') }}
+                                </x-button>
+                            </div>
+                        </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    @include('layouts.scripts')  
+  </body>
 </html>

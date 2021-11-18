@@ -8,19 +8,9 @@
 
     <title>{{ config('app.name', 'Blog Site') }}</title>
     
-    <!-- Vendor styles-->
-    <!-- Animate.CSS-->
-    <link rel="stylesheet" href="{{ asset('vendor/animate.css/animate.css') }}">
-    <!-- Bootstrap-->
-    <link rel="stylesheet" href="{{ asset('vendor/bootstrap/dist/css/bootstrap.min.css') }}">
-    <!-- Ionicons-->
-    <link rel="stylesheet" href="{{ asset('vendor/ionicons/css/ionicons.css') }}">
-    <!-- Material Colors-->
-    <link rel="stylesheet" href="{{ asset('vendor/material-colors/dist/colors.css') }}">
-    <!-- Application styles-->
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    @include('layouts.css')
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    @include('layouts.scripts')
+    
   </head>
   <body class="theme-default">
     <div class="min-h-screen bg-gray-100">
@@ -35,4 +25,5 @@
         </div>
     </div>
   </body>
+  @include('layouts.scripts')
 </html>

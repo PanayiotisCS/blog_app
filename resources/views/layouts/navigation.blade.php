@@ -1,4 +1,4 @@
-<header class="header-container bg-white shadow">
+{{-- <header class="header-container bg-white shadow">
     <nav>
         <!-- Primary Navigation Menu -->
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -98,4 +98,42 @@
             </div>
         </div>
     </nav>
-</header>
+</header> --}}
+<header class="header-container-fluid">
+        <nav>
+          {{-- <ul class="d-lg-none">
+            <li><a class="sidebar-toggler menu-link menu-link-close" href="#"><span><em></em></span></a></li>
+          </ul> --}}
+          {{-- <ul class="d-none d-sm-block">
+            <li><a class="covermode-toggler menu-link menu-link-close" href="#"><span><em></em></span></a></li>
+          </ul> --}}
+          <h2 class="header-title">Blog Site</h2>
+          <!-- Navigation Links -->
+            @if (Auth::user()->type == 1)
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                        {{ __('Dashboard') }}
+                    </x-nav-link>
+                </div>
+            @endif
+          <ul class="float-right">
+            <li class="dropdown"><a class="dropdown-toggle has-badge" href="#" data-toggle="dropdown"><img class="header-user-image" src="img/user/01.jpg" alt="header-user-image"><sup class="badge bg-danger">3</sup></a>
+              <div class="dropdown-menu dropdown-menu-right dropdown-scale">
+                <h6 class="dropdown-header">User menu</h6><a class="dropdown-item" href="#"><span class="float-right badge badge-primary">4</span><em class="ion-ios-email-outline icon-lg text-primary"></em>Messages</a><a class="dropdown-item" href="#"><em class="ion-ios-gear-outline icon-lg text-primary"></em>Settings</a>
+                <div class="dropdown-divider" role="presentation"></div>
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+
+                    <x-dropdown-link :href="route('logout')"
+                            onclick="event.preventDefault();
+                                        this.closest('form').submit();">
+                        {{ __('Log Out') }}
+                    </x-dropdown-link>
+                </form>
+                <em class="ion-log-out icon-lg text-primary"></em>
+              </div>
+            </li>
+            <li><a id="header-search" href="#"><em class="ion-ios-search-strong"></em></a></li>
+          </ul>
+        </nav>
+      </header>
