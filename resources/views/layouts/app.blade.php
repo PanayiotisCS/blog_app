@@ -17,7 +17,7 @@
         <div class="layout-container">
             <!-- top navbar-->
             @include('layouts.navigation')
-            
+            @include('layouts.sidebar')
             <!-- Main section-->
             <main class="main-container">
                 @yield('content')

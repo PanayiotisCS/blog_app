@@ -1,9 +1,7 @@
-@extends('layouts.app')
+
 {{-- @extends('layouts.navigation') --}}
-
+@extends('layouts.app')
 @section('content')
-
-<body>
     <section class="layout-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="container-overlap bg-gradient-primary"></div>
         <div class="container-fluid">
@@ -14,13 +12,13 @@
                     <?php foreach ($posts as $post) : ?>
                         <div class="cardbox">
                             <div class="card-body">
-                                {{-- <!-- START dropdown-->
+                                <!-- START dropdown-->
                                 <div class="float-right dropdown">
                                     <button class="btn btn-secondary btn-flat btn-flat-icon" type="button" data-toggle="dropdown"><em class="ion-android-more-horizontal"></em></button>
                                     <div class="dropdown-menu dropdown-scale dropdown-menu-right" role="menu"><a class="dropdown-item" href="#">Hide post</a><a class="dropdown-item" href="#">Stop following</a>
                                     <div class="dropdown-divider" role="separator"></div><a class="dropdown-item" href="#">Report</a>
                                     </div>
-                                </div> --}}
+                                </div>
                                 <!-- END dropdown-->
                                 <div class="media m-0">
                                     {{-- <div class="d-flex mr-3"><a href="#"><img class="rounded-circle thumb48" src="img/user/06.jpg" alt="User"></a></div> --}}
@@ -58,7 +56,6 @@
             </div>
         </div>
     </section>
-</body>
 <script type="text/javascript">
     $(document).ready(function(){
         var flag = false;

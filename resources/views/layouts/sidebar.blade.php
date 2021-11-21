@@ -19,9 +19,9 @@
               <li>
                 <div class="sidebar-nav-heading">MENU</div>
               </li>
-              <li><a href="dashboard.html"><span class="float-right nav-label"></span><span class="nav-icon"><em class="ion-ios-speedometer-outline"></em></span><span>Dashboard</span></a></li>
+              <li><a href="{{ route('dashboard')}}"><span class="float-right nav-label"></span><span class="nav-icon"><em class="ion-ios-speedometer-outline"></em></span><span>Dashboard</span></a></li>
               <li><a href="{{ route('posts.index') }}"><span class="float-right nav-label"></span><span class="nav-icon"><em class="ion-clipboard"></em></span><span>Posts</span></a></li>
-              <li><a href="widgets.html"><span class="float-right nav-label"><span class="badge-rounded badge-primary">!</span></span><span class="nav-icon"><em class="ion-ios-box-outline"></em></span><span>Widgets</span></a></li>
+              <li><a href="{{ route('dashboard')}}"><span class="float-right nav-label"></span><span class="nav-icon"><em class="ion-person"></em></span><span>Profile</span></a></li>
             </ul>
           </nav>
         </div>
