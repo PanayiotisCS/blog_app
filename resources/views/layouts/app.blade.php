@@ -14,7 +14,7 @@
   </head>
   <body class="theme-default">
     <div class="min-h-screen bg-gray-100">
-        <div class="layout-container">
+        <div class="layout-container-fluid">
             <!-- top navbar-->
             @include('layouts.navigation')
             @include('layouts.sidebar')

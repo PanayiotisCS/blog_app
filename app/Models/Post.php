@@ -15,8 +15,9 @@ class Post extends Model
      * @var string[]
      */
     protected $fillable=[
+        'user_id',
         'title',
-        'body'
+        'body',
     ];
 
     /**

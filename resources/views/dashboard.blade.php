@@ -92,47 +92,6 @@
                     </div>
                   </div>
                 </div>
-                <div class="cardbox">
-                  <div class="cardbox-heading clearfix">
-                    <div class="float-md-left"><strong>Overview of sales progress</strong><br><small>Relevance per month of the current year</small></div>
-                    <div class="mb-2 d-sm-none"></div>
-                    <div class="float-md-right">
-                      <select class="custom-select form-control form-control-sm">
-                        <option value="1" selected="">Last Period</option>
-                        <option value="2">Last Month</option>
-                        <option value="4">Last Year</option>
-                        <option value="4">01.01.2017 - 06.06.2017</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div style="margin: 0 -8px">
-                    <div class="flot-chart flot-chart-lg flot-legend-left" id="flot-main-spline"></div>
-                  </div>
-                  <div class="cardbox-body">
-                    <div class="h-scroll">
-                      <div class="row text-center">
-                        <div class="col-sm-4"><small>Visitors</small>
-                          <h5 class="mt-1 mb-3"><strong>550</strong></h5>
-                          <div class="progress progress-xs mb-0 wd-xs m-auto">
-                            <div class="progress-bar bg-success" style="width: 45%"></div>
-                          </div>
-                        </div>
-                        <div class="col-sm-4"><small>Clicks</small>
-                          <h5 class="mt-1 mb-3"><strong>230</strong></h5>
-                          <div class="progress progress-xs mb-0 wd-xs m-auto">
-                            <div class="progress-bar bg-warning" style="width: 25%"></div>
-                          </div>
-                        </div>
-                        <div class="col-sm-4"><small>Income</small>
-                          <h5 class="mt-1 mb-3"><strong>$2,154.5</strong></h5>
-                          <div class="progress progress-xs mb-0 wd-xs m-auto">
-                            <div class="progress-bar bg-info" style="width: 75%"></div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
           </div>

@@ -1,4 +1,3 @@
-
 <!-- Modernizr-->
 <script src="{{ asset('vendor/modernizr/modernizr.custom.js') }}"></script>
 <!-- jQuery-->
@@ -7,7 +6,7 @@
 <script src="{{ asset('vendor/popper.js/dist/umd/popper.min.js') }}"></script>
 <script src="{{ asset('vendor/bootstrap/dist/js/bootstrap.js') }}"></script>
 <!-- PaceJS-->
-<script src="{{ asset('vendor/pace-progress/pace.min.js') }}"></script>
+{{-- <script src="{{ asset('vendor/pace-progress/pace.min.js') }}"></script> --}}
 <!-- Material Colors-->
 <script src="{{ asset('vendor/material-colors/dist/colors.js') }}"></script>
 <!-- Screenfull-->

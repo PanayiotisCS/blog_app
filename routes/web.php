@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\CommentController;
 use App\Models\Post;
 /*
 |--------------------------------------------------------------------------
@@ -27,7 +28,7 @@ if(Auth::user() && Auth::user()->type == 1){
 }
 
 Route::resource('posts', PostController::class)->middleware(['auth']);
-
+Route::post('/comment/store', [CommentController::class, 'store'])->name('comment.add');
 Route::get('/', function () {
     return redirect('/login');
 });
