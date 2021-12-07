@@ -25,7 +25,6 @@
                 <em class="ion-log-out icon-lg text-primary"></em>
             </div>
         </li>
-        <li><a id="header-search" href="#"><em class="ion-ios-search-strong"></em></a></li>
         </ul>
     </nav>
 </header>

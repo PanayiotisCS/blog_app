@@ -27,7 +27,7 @@ Route::prefix('admin')->group(function (){
 Route::resource('posts', PostController::class)->middleware(['auth']);
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/login');
 });
 
 // if the user 

@@ -14,6 +14,9 @@ class PostController extends Controller
         return view('posts.index', ['posts' => $data]);
     }
 
+    public function create(){
+        return view('posts.create');
+    }
     // public function show($id)
     // {
     //     return view('posts', 

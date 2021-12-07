@@ -9,6 +9,18 @@
                 <div class="col-1">
                 </div>
                 <div class="col-9">
+                    <div class="cardbox">
+                        <div class="cardbox-body">
+                            <form class="mt-3" action="">
+                                <div class="form-group">
+                                    <label>What's on your mind?</label>
+                                    <div>
+                                        <a href={{ route('posts.create')}} class="btn btn-primary" type="button"><em class="ion-plus"></em> POST</a>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                     <?php foreach ($posts as $post) : ?>
                         <div class="cardbox">
                             <div class="card-body">
