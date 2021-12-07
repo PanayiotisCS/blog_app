@@ -15,14 +15,16 @@ use App\Models\Post;
 */
 
 
-Route::prefix('admin')->group(function (){
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->middleware(['auth'])->name('dashboard');
-    // Route::get('/users', function(){
-
-    // });
-});
+if(Auth::user() && Auth::user()->type == 1){
+    Route::prefix('admin')->group(function (){
+        Route::get('/dashboard', function () {
+            return view('dashboard');
+        })->middleware(['auth'])->name('dashboard');
+        // Route::get('/users', function(){
+    
+        // });
+    });
+}
 
 Route::resource('posts', PostController::class)->middleware(['auth']);
 
