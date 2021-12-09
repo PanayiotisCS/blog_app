@@ -17,11 +17,18 @@
         <div class="layout-container-fluid">
             <!-- top navbar-->
             @include('layouts.navigation')
-            @include('layouts.sidebar')
-            <!-- Main section-->
-            <main class="main-container">
+
+            @if(Auth::user()->type == 1)
+                @include('layouts.sidebar')
+              <!-- Main section-->
+              <main class="main-container">
+                  @yield('content')
+              </main>
+            @else
+              <main>
                 @yield('content')
-            </main>
+              </main>
+            @endif
         </div>
     </div>
   </body>

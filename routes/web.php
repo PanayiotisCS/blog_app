@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\AdminController;
 use App\Models\Post;
 /*
 |--------------------------------------------------------------------------
@@ -16,16 +17,14 @@ use App\Models\Post;
 */
 
 
-if(Auth::user() && Auth::user()->type == 1){
-    Route::prefix('admin')->group(function (){
-        Route::get('/dashboard', function () {
-            return view('dashboard');
-        })->middleware(['auth'])->name('dashboard');
-        // Route::get('/users', function(){
-    
-        // });
-    });
-}
+
+Route::prefix('admin')->group(function (){
+    // Route::get('/admin/dashboard', function () {
+    //     return view('admin.dashboard');
+    // })->middleware(['admin'])->name('dashboard');
+    Route::get('/dashboard', [AdminController::class, 'show'])->middleware(['admin'])->name('dashboard');
+});
+
 
 Route::resource('posts', PostController::class)->middleware(['auth']);
 Route::post('/comment/store', [CommentController::class, 'store'])->name('comment.add');

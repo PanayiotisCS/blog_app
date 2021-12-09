@@ -43,6 +43,12 @@ class DatabaseSeeder extends Seeder
             'type' => '1',
             'password' => Hash::make('password')
         ]);
+        $test_user = User::create([
+            'name' => 'Normal User',
+            'email' => 'user@user.com',
+            'type' => '0',
+            'password' => Hash::make('password')
+        ]);
         $user = User::factory()->create();
         $posts = Post::factory(2)->hasComments(3)->create();
     }

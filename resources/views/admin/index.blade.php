@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 {{-- <section class="layout-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"> --}}
-<section class="layout-container-fluid">
+<section class="layout-container">
     <div class="container-overlap bg-gradient-primary"></div>
     <div class="container-fluid">
         <div class="row">
@@ -45,7 +45,7 @@
                             <button class="btn btn-flat btn-primary comment" data-id="{{ $post->id }}" type="button"><em class="ion-chatbubbles icon-lg"></em></button>
                         </div>
                         <?php foreach ($post->comments as $comment) : ?>
-                            <div class="d-flex media m-1 mr-auto">
+                            <div class="d-flex media m-2 mr-auto">
                                 <div class="card-text py-2 px-2"> <span><b>{{ $comment->user->name }}</b></span>
                                     <div class="card-text">
                                     {{ $comment->body }} 

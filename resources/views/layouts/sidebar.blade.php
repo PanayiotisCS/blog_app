@@ -1,4 +1,4 @@
-<aside class="sidebar-container">
+<aside class="sidebar-container position-fixed">
   <div class="brand-header">
     <div class="float-left pt-4 text-muted sidebar-close"><em class="ion-arrow-left-c icon-lg"></em></div><a class="brand-header-logo" href="#">
       <!-- Logo Imageimg(src="img/logo.png", alt="logo")
