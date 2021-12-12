@@ -43,6 +43,7 @@
                         <div class="card-footer">
                             <button class="btn btn-flat btn-primary" type="button"><em class="ion-thumbsup icon-lg"></em></button>
                             <button class="btn btn-flat btn-primary comment" data-id="{{ $post->id }}" type="button"><em class="ion-chatbubbles icon-lg"></em></button>
+                            <p class="text-bold">{{ 0 }} Likes</p>
                         </div>
                         <?php foreach ($post->comments as $comment) : ?>
                             <div class="d-flex media m-1 mr-auto">
@@ -53,7 +54,7 @@
                                 </div>
                             </div>
                         <?php endforeach; ?>
-                        <div class="bg-light p-2 comment-section-{{ $post->id }}" data-text="{{ $post->id }}" hidden="true">
+                        <div class="comments bg-light p-2 comment-section-{{ $post->id }}" data-text="{{ $post->id }}" hidden="true">
                             <form method="POST" action="{{ route('comment.add') }}" enctype="multipart/form-data">
                             {{ csrf_field() }}
                                 <div class="d-felx flex-row align-items-start">
@@ -87,6 +88,24 @@
         })
     });
 </script>
+
+{{-- <script>
+    const app = new Vue({
+        el: ".comments"
+        data: {
+            comments:[],
+        },
+        mounted(){
+            axios.get("{{route('comment.add')}}")
+                .then(response => {
+                    this.comments = response.data;
+                })
+                .cath(response => {
+                    console.log(response);
+            })
+        }
+    });
+</script> --}}
 @endsection
 
 

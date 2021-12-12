@@ -4,7 +4,7 @@
   <div class="container-overlap bg-gradient-primary"></div>
   <div class="container-fluid">
     <div class="cardbox">
-      <div class="cardbox-heading">
+      <div class="card-title">
         <h2 class="text-dark">Create new post</h2>
       </div>
       <div class="cardbox-body">

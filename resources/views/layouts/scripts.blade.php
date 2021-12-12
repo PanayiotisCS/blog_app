@@ -1,3 +1,6 @@
+<!-- Vue.js & Axios-->
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <!-- Modernizr-->
 <script src="{{ asset('vendor/modernizr/modernizr.custom.js') }}"></script>
 <!-- jQuery-->
@@ -7,6 +10,9 @@
 <script src="{{ asset('vendor/bootstrap/dist/js/bootstrap.js') }}"></script>
 <!-- PaceJS-->
 {{-- <script src="{{ asset('vendor/pace-progress/pace.min.js') }}"></script> --}}
+<!-- Flot charts -->
+<script src="{{ asset('vendor/flot/jquery.flot.js')}}"></script>
+<script src ="{{ asset('vendor/jquery.flot.tooltip/js/jquery.flot.tooltip.js') }}"></script>
 <!-- Material Colors-->
 <script src="{{ asset('vendor/material-colors/dist/colors.js') }}"></script>
 <!-- Screenfull-->

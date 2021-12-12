@@ -20,6 +20,7 @@ class Comment extends Model
 
     public function post()
     {
+        // hasMany
         return $this->morphedByMany(Post::class, 'commentable');
     }
 }

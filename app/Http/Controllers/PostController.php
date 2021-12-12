@@ -10,8 +10,7 @@ class PostController extends Controller
     //
     public function index()
     {
-        $data = Post::all()->sortByDesc('updated_at');
-        return view('posts.index', ['posts' => $data]);
+        return view('posts.index', ['posts' => Post::all()->sortByDesc('updated_at')]);
     }
 
     public function create()

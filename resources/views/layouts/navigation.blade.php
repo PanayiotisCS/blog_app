@@ -13,7 +13,6 @@
             <div class="dropdown-menu dropdown-menu-right dropdown-scale">
             <h6 class="dropdown-header">User menu</h6><a class="dropdown-item" href="#"><em class="ion-ios-email-outline icon-lg text-primary"></em>Messages</a><a class="dropdown-item" href="#"><em class="ion-ios-gear-outline icon-lg text-primary"></em>Settings</a>
             <div class="dropdown-divider" role="presentation"></div>
-            {{-- Fix log out position --}}
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
                     <a class="dropdown-item" :href="route('logout')"
@@ -36,7 +35,6 @@
             <div class="dropdown-menu dropdown-menu-right dropdown-scale">
             <h6 class="dropdown-header">User menu</h6><a class="dropdown-item" href="#"><em class="ion-ios-email-outline icon-lg text-primary"></em>Messages</a><a class="dropdown-item" href="#"><em class="ion-ios-gear-outline icon-lg text-primary"></em>Settings</a>
             <div class="dropdown-divider" role="presentation"></div>
-            {{-- Fix log out position --}}
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
                     <a class="dropdown-item" :href="route('logout')"
