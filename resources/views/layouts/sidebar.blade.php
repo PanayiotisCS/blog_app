@@ -24,7 +24,15 @@
         <li><a href="{{ route('posts.index') }}"><span class="float-right nav-label"></span><span class="nav-icon"><em class="ion-clipboard"></em></span><span>Posts</span></a></li>
         <li><a href="#"><span class="float-right nav-label"></span><span class="nav-icon"><em class="ion-person"></em></span><span>Profile</span></a></li>
         
-        <li class="fixed-bottom"><a href="#"><span class="float-right nav-label"></span><span class="nav-icon"><em class="ion-log-out icon-md"></em></span><span>Log out</span></a></li>
+        <li class="fixed-bottom">
+          <form method="POST" action="{{ route('logout') }}">
+              @csrf
+              <a class="btn" :href="route('logout')" onclick="event.preventDefault(); this.closest('form').submit();">
+                  <span class="float-right nav-label"></span><span class="nav-icon"><em class="ion-log-out icon-md"></em></span>
+                  <span>Log Out</span>
+              </a>
+          </form>
+        </li>
       </ul>
     </nav>
   </div>
