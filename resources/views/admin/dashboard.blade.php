@@ -3,7 +3,7 @@
   <section class="section-container">
     <div class="container-fluid">
       <div class="row">
-        <div class="col-xl-9">
+        <div class="col-xl-12">
           <div class="welcome">
             <h1>Hello, {{Auth::user()->name}}</h1>
             <p>Welcome back to your blog site.</p>
@@ -18,13 +18,9 @@
                 <div class="cardbox">
                   <div class="cardbox-body">
                     <div class="clearfix mb-2">
-                      <div class="float-right"><small><em class="ml-2 ion-arrow-up-b"></em></small></div>
                       <div class="float-left"><small>Total users</small></div>
                     </div>
                     <div class="h3" data-counter="275">{{ $totalUsers }}</div>
-                    <div class="text-center mt-3">
-                      <div class="sparkline" id="sparkline1" data-bar-color="#42a5f5"></div>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -32,13 +28,9 @@
                 <div class="cardbox">
                   <div class="cardbox-body">
                     <div class="clearfix mb-2">
-                      <div class="float-right"><small><em class="ml-2 ion-arrow-down-b"></em></small></div>
                       <div class="float-left"><small>Total Posts</small></div>
                     </div>
                     <div class="h3" data-counter="8345">{{ $totalPosts }}</div>
-                    <div class="text-center mt-3">
-                      <div class="sparkline" id="sparkline2" data-bar-color="#42a5f5"></div>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -46,45 +38,46 @@
                 <div class="cardbox">
                   <div class="cardbox-body">
                     <div class="clearfix mb-2">
-                      <div class="float-right"><small><em class="ml-2 ion-arrow-up-b"></em></small></div>
                       <div class="float-left"><small>Total Comments</small></div>
                     </div>
                     <div class="h3" data-counter="559">{{ $totalComments }}</div>
-                    <div class="text-center mt-3">
-                      <div class="sparkline" id="sparkline3" data-bar-color="#42a5f5"></div>
-                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="card-title">
-            <h2 class="text-dark">Posts analytics</h2>
-          </div>
           <div class="cardbox">
+            <div class="cardbox-heading">
+                <div class="cardbox-title">Post Analytics</div>
+              </div>
             <!-- START table-responsive-->
-            <div class="table-responsive">
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th>Post Title</th>
-                    <th class="text-center">Author</th>
-                    <th class="text-center">No. Likes</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  @foreach ($posts as $post)
-                  <tr>
-                    <td>
-                      <p class="m-0">{{$post->title}}</p>
-                    </td>
-                    <td class="va-middle text-center">
-                      <img class="wd-xxs2 rounded-circle shadow-z2" src="{{asset('img/user/02.jpg')}}" alt="Team lead" data-toggle="tooltip" data-title="Marion Woods"></td>
-                    <td class="va-middle text-center">25/50</td>
-                  </tr>
-                  @endforeach
-                </tbody>
-              </table>
+            <div class="cardbox-body clearfix">
+              <div class="table-responsive">
+                <table class="table table-stripped my-4" id="datatable1">
+                  <thead>
+                    <tr>
+                      <th>Post Title</th>
+                      <th class="text-center">Author</th>
+                      <th class="text-center sort-numeric">No. Likes</th>
+                      <th class="sort-numeric">No. Comments</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    @foreach ($posts as $post)
+                    <tr>
+                      <td>
+                        <a href="{{ route('posts.show',['id' => $post->id]); }}" class="m-0">{{$post->title}}</p>
+                      </td>
+                      <td class="va-middle text-center">
+                        {{-- <img class="wd-xxs2 rounded-circle shadow-z2" src="{{asset('img/user/02.jpg')}}" alt="Team lead"><span>{{$post->user->name}}</span></td> --}}
+                        {{$post->user->name}}
+                      <td class="va-middle text-center">{{ $post->likes->count()}}</td>
+                      <td class="va-middle text-center">{{ $post->comments->count()}}</td>
+                    </tr>
+                    @endforeach
+                  </tbody>
+                </table>
+              </div>
             </div>
             <!-- END table-responsive-->
           </div>

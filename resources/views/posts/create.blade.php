@@ -8,7 +8,7 @@
         <h2 class="text-dark">Create new post</h2>
       </div>
       <div class="cardbox-body">
-        <form method="POST" action="{{ route('comment.add') }}" enctype="multipart/form-data">
+        <form method="POST" action="{{ route('posts.store') }}" enctype="multipart/form-data">
         {{ csrf_field() }}
           <fieldset>
             <div class="form-group row">

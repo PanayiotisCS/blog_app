@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
-
+use App\Models\Like;
 class PostController extends Controller
 {
     //
@@ -23,8 +23,13 @@ class PostController extends Controller
         if(Post::find($request->id) != null){
 
             $post = Post::find($request->id);
-            
-            return view('posts.show', ['post'=>$post]);
+            $data = [
+                'post'      => $post,
+                'comments'  => $post->comments->sortByDesc('updated_at'),
+                'totaLikes' => $post->likes->count()
+            ];
+            // dd($post->likes);
+            return view('posts.show', ['data' => $data]);
         }
         
         return redirect()->route('posts.index')->with('error','Something went wrong');
@@ -45,7 +50,7 @@ class PostController extends Controller
             'body' => $attributes['body']
         ]);
 
-        return redirect('/')->with('success','Post Submited!');
+        return redirect()->route('posts.index')->with('success','Post Submited!');
     }
 
     public function edit(Post $post)

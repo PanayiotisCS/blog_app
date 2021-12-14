@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\LikeController;
 use App\Models\Post;
 /*
 |--------------------------------------------------------------------------
@@ -26,8 +27,10 @@ Route::prefix('admin')->group(function (){
 });
 
 
-Route::resource('posts', PostController::class)->middleware(['auth']);
+Route::resource('posts', PostController::class)->middleware(['auth'])->except('show');
+Route::get('posts/{id}', [PostController::class, 'show'])->middleware(['auth'])->name('posts.show');
 Route::post('/comment/store', [CommentController::class, 'store'])->name('comment.add');
+Route::post('/like/store', [LikeController::class, 'store'])->name('like.add');
 Route::get('/', function () {
     return redirect('/login');
 });

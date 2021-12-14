@@ -12,6 +12,10 @@
 <!-- Toastr -->
 {{-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"> --}}
 <link rel="stylesheet" href="{{ asset('vendor/toastr/build/toastr.min.css') }}">
+<!-- Datables -->
+<link rel="stylesheet" href="{{ asset('vendor/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css') }}">
+<link rel="stylesheet" href="{{ asset('vendor/datatables.net-keytable-bs/css/keyTable.bootstrap.min.css') }}">
+<link rel="stylesheet" href="{{ asset('vendor/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css') }}">
 <!-- Application styles-->
 <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 <link rel="stylesheet" href="{{ asset('css/dasha-app.css') }}">

@@ -37,13 +37,13 @@
                                 <p class="m-0 text-bold">{{ $post->user->name }}</p><small class="text-muted"><em class="ion-earth text-muted mr-2"></em><span>{{ $post->created_at->diffInDays(); }}</span></small>
                                 </div>
                             </div>
-                            <div class="card-text"><a href="{{ route('posts.show',['post' => $post->id]); }}"><b>{{ $post->title }}</b></a></div>
+                            <div class="card-text"><a href="{{ route('posts.show',['id' => $post->id]); }}"><b>{{ $post->title }}</b></a></div>
                             <div class="card-text">{{ $post->body }}</div>
                         </div>
                         <div class="card-footer">
-                            <button class="btn btn-flat btn-primary" type="button"><em class="ion-thumbsup icon-lg"></em></button>
-                            <button class="btn btn-flat btn-primary comment" data-id="{{ $post->id }}" type="button"><em class="ion-chatbubbles icon-lg"></em></button>
-                            <p class="text-bold">{{ 0 }} Likes</p>
+                            {{-- <button class="btn btn-flat btn-primary" type="button"><em class="ion-thumbsup icon-lg"></em></button>
+                            <button class="btn btn-flat btn-primary comment" data-id="{{ $post->id }}" type="button"><em class="ion-chatbubbles icon-lg"></em></button> --}}
+                            <p class="text-bold">{{ $post->likes->count() }} Likes</p>
                         </div>
                     </div>
                     <br>
@@ -54,25 +54,6 @@
         </div>
     </div>
 </section>
-</script> --}}
-
-{{-- <script>
-    const app = new Vue({
-        el: ".comments"
-        data: {
-            comments:[],
-        },
-        mounted(){
-            axios.get("{{route('comment.add')}}")
-                .then(response => {
-                    this.comments = response.data;
-                })
-                .cath(response => {
-                    console.log(response);
-            })
-        }
-    });
-</script> --}}
 @endsection
 
 
