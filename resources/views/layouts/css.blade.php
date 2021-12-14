@@ -9,6 +9,9 @@
 <link rel="stylesheet" href="{{ asset('vendor/ionicons/css/ionicons.css') }}">
 <!-- Material Colors-->
 <link rel="stylesheet" href="{{ asset('vendor/material-colors/dist/colors.css') }}">
+<!-- Toastr -->
+{{-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"> --}}
+<link rel="stylesheet" href="{{ asset('vendor/toastr/build/toastr.min.css') }}">
 <!-- Application styles-->
 <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 <link rel="stylesheet" href="{{ asset('css/dasha-app.css') }}">

@@ -9,7 +9,7 @@ use App\Models\Comment;
 
 class AdminController extends Controller
 {
-    public function show()
+    public function index()
     {
         $data = [
             'users' => User::all(),

@@ -18,6 +18,18 @@ class PostController extends Controller
         return view('posts.create');
     }
     
+    public function show(Request $request)
+    {
+        if(Post::find($request->id) != null){
+
+            $post = Post::find($request->id);
+            
+            return view('posts.show', ['post'=>$post]);
+        }
+        
+        return redirect()->route('posts.index')->with('error','Something went wrong');
+    }
+
     public function store()
     {    
         $attributes['user_id'] = auth()->id();

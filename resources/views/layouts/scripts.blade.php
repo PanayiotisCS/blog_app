@@ -22,6 +22,11 @@
 <!-- jQuery Form Validation-->
 <script src="{{ asset('vendor/jquery-validation/dist/jquery.validate.js') }}"></script>
 <script src="{{ asset('vendor/jquery-validation/dist/additional-methods.js') }}"></script>
+<!-- Toastr -->
+{{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script> --}}
+<script src="{{ asset('vendor/toastr/build/toastr.min.js') }}"></script>
 <!-- App script-->
 <script src="{{ asset('js/app.js') }}"></script>
 <script src="{{ asset('js/dasha-app.js') }}"></script>
+@include('layouts.error')
