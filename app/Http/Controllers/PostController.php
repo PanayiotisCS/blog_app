@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Like;
 use App\Models\Post;
+use App\Models\Comment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Input;
@@ -28,10 +29,10 @@ class PostController extends Controller
             $post = Post::find($request->id);
             $data = [
                 'post'      => $post,
-                'comments'  => $post->comments->sortByDesc('updated_at'),
+                // 'comments'  => $post->comments->sortByDesc('created_at'),
+                'comments'  => Comment::where('post_id',$post->id)->paginate(5),
                 'totaLikes' => $post->likes->count()
             ];
-            // dd($post->likes);
             return view('posts.show', ['data' => $data]);
         }
         

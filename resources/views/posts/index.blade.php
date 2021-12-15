@@ -48,8 +48,9 @@
                                 <img class="rounded h-50 w-50 mx-auto d-block" src="{{ asset($post->image_path) }}" alt="MaterialImg">
                             @endif    
                         </div>
-                        <div class="card-footer">
+                        <div class="card-footer flex">
                             <p class="text-bold">{{ $post->likes->count() }} Likes</p>
+                            <p class="text-bold flex-1 ml-2">{{ $post->comments->count() }} Comments</p>
                         </div>
                     </div>
                     <br>

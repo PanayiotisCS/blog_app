@@ -60,6 +60,7 @@
                             </div>
                         </div>
                     <?php endforeach; ?>
+                    {{ $data['comments']->links()}}
                     <div class="comments bg-light p-2 comment-section-{{ $data['post']->id }}" data-text="{{ $data['post']->id }}" hidden="true">
                         <div class="d-felx flex-row align-items-start">
                             <input type="hidden" name="post_id" value="{{ $data['post']->id }}"/>
