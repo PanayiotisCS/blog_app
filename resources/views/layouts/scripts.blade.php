@@ -56,4 +56,5 @@ $(document).ready(function() {
     $('#datatable1_length').hide();
 });
 </script>
+@stack('scripts')
 @include('layouts.error')

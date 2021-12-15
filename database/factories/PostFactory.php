@@ -17,7 +17,6 @@ class PostFactory extends Factory
             // create the user grab the id and assign it to 'user_id'
             'user_id' => User::factory(),
             'title' => $this->faker->sentence,
-            'excerpt' => $this->faker->sentence,
             'body'=> $this->faker->paragraph
         ];
     }

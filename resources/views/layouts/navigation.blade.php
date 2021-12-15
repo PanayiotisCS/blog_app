@@ -7,7 +7,7 @@
         <ul class="d-none d-sm-block">
         <li><a class="covermode-toggler menu-link menu-link-close" href="#"><span><em></em></span></a></li>
         </ul>
-        <h2 class="header-title">Blog Site</h2>
+        <h2 class="header-title"><a href="{{ route('posts.index') }}"><span class="nav-label">Blog Site</span></a></h2>
         <ul class="float-right mt-3">
         <li class="dropdown"><a class="dropdown-toggle has-badge" href="#" data-toggle="dropdown"><img class="header-user-image" src="{{asset('img/user/01.jpg')}}" alt="header-user-image"></a>
             <div class="dropdown-menu dropdown-menu-right dropdown-scale">
@@ -29,7 +29,7 @@
 @else
     <header class="header-container ml-0">
     <nav>
-        <h2 class="header-title">Blog Site</h2>
+        <h2 class="header-title"><a href="{{ route('posts.index') }}"><span class="nav-label">Blog Site</span></a></h2>
         <ul class="float-right mt-3">
         <li class="dropdown"><a class="dropdown-toggle has-badge" href="#" data-toggle="dropdown"><img class="header-user-image" src="{{asset('img/user/01.jpg')}}" alt="header-user-image"></a>
             <div class="dropdown-menu dropdown-menu-right dropdown-scale">

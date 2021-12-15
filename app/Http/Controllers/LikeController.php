@@ -28,7 +28,7 @@ class LikeController extends Controller
                     'likeCount' => $likeCount
                 ];
                 $post->update($post_data);
-                return response()->json(['success'=>'Post unliked!']);
+                return response()->json(['message'=>'Post unliked!']);
             }else{
                 $like = new Like();
                 $like->post_id = $post->id;
@@ -42,7 +42,7 @@ class LikeController extends Controller
                     'likeCount' => $likeCount
                 ];
                 $post->update($post_data);
-                return response()->json(['success'=>'Post liked!']);
+                return response()->json(['message'=>'Post liked!']);
                 
             }
         }
