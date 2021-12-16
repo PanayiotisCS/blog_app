@@ -40,13 +40,14 @@ class ProfileController extends Controller
             // 'profile_path' => 'image|mimes:png,jpg,gif'
         ]);
         
+        $filepath="";
         if($request->hasFile('profile_path')){
-            $attributes['profile_path'] = $this->UserImageUpload(request()->file('profile_path'));
+            $filepath = $this->UserImageUpload(request()->file('profile_path'));
         }
         $profile->user_id = auth()->id();
         $profile->address = $request->address;
         $profile->phone = $request->phone;
-        $profile->profile_path = $attributes['profile_path'];
+        $profile->profile_path = $filepath;
         $profile->save(); 
 
         $posts = $profile->user->posts;
