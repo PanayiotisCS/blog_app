@@ -36,7 +36,7 @@
                 <p class="mt-3">File</p>
                 <div class="flex">
                     <div class="col-7">
-                        <input class="custom-file-input" id="customFile" type="file" name="image_path">
+                        <input class="custom-file-input" id="customFile" type="file" name="image_path" accept="image/*">
                         <label class="custom-file-label" for="customFile">Choose file</label>
                     </div>
                     <div class="col-2">

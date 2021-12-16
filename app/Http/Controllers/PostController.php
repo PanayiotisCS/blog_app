@@ -71,15 +71,19 @@ class PostController extends Controller
     }
 
     public function update(Post $post)
-    {
-        $request = request();
+    {   
         $attributes = request()->validate([
             'title' => 'required',
             'body'  => 'required',
-            'image_path' => 'image|mimes:png,jpg,gif'
         ]);
 
         if(isset($attributes['image_path'])){
+            // $this->validate($request,[
+            //     'image_path' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            // ]);
+            Validator::make(request(),[
+                'image_path' => ['nullable','image','max:2048']
+            ]);
             $attributes['image_path'] = $this->UserImageUpload(request()->file('image_path'));
         }
         
@@ -90,6 +94,7 @@ class PostController extends Controller
         $post->save(); 
 
         return redirect()->route('posts.index')->with('message','Post Updated!');
+    
     }
 
     public function destroy(Post $post)

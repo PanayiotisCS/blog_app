@@ -48,8 +48,9 @@
                                 <div class="col-lg-8">
                                     <div class="flex">
                                         <div class="col-7">
-                                            <input class="custom-file-input" id="customFile" type="file" name="profile_path">
+                                            <input class="custom-file-input" id="customFile" type="file" name="profile_path" accept="image/*">
                                             <label class="custom-file-label" for="customFile">Choose file</label>
+                                            {!!$errors->first('image','<span class="text-danger">:message</span>') !!}
                                         </div>
                                     </div>
                                 </div>

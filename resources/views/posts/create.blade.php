@@ -34,7 +34,7 @@
               <div class="col-lg-10">
                 <p class="mt-3">File</p>
                 <div class="custom-file">
-                  <input class="custom-file-input" id="customFile" type="file" name="image">
+                  <input class="custom-file-input" id="customFile" type="file" name="image" accept="image/*">
                   <label class="custom-file-label" for="customFile">Choose file</label>
                 </div>
               </div>
