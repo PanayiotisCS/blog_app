@@ -60,7 +60,7 @@
                     @endif
                 </div>
                 </div>
-                <div class="cardbox-footer text-center text-sm"><span class="mr-2">No account yet?</span><a class="text-inherit" href="signup.html"><strong>Register Now</strong></a></div>
+                <div class="cardbox-footer text-center text-sm"><span class="mr-2">No account yet?</span><a class="text-inherit" href="{{ route('register') }}"><strong>Register Now</strong></a></div>
               </form>
             </div>
           </div>
