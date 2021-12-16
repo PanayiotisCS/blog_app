@@ -32,9 +32,13 @@
                         @endif
                         <!-- END dropdown-->
                         <div class="media m-0">
-                            <div class="d-flex mr-3"><a href="#"><img class="rounded-circle thumb48" src="{{ asset('img/user/06.jpg') }}" alt="User"></a></div>
+                            <div class="d-flex mr-3">
+                                @if ($data['post']->user->profile->profile_path != null)
+                                    <a href="{{ route('profile.show',['profile'=>$data['post']->user->profile->id])}}"><img class="rounded-circle thumb48" src="{{ asset($data['post']->user->profile->profile_path) }}" alt="User"></a>        
+                                @endif
+                            </div>
                             <div class="media-body p-2">
-                            <p class="m-0 text-bold">{{ $data['post']->user->name }}</p><small class="text-muted"><em class="ion-earth text-muted mr-2"></em><span>{{ $data['post']->created_at->diffInDays(); }}</span></small>
+                                <a class="m-0 text-bold" href="{{ route('profile.show',['profile'=>$data['post']->user->profile->id])}}">{{ $data['post']->user->name }}</a><br><small class="text-muted"><em class="ion-earth text-muted mr-2"></em><span>{{ $data['post']->created_at->diffForHumans(); }}</span></small>
                             </div>
                         </div>
                         <div class="cardbox-body">

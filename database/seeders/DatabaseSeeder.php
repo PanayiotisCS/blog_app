@@ -18,26 +18,7 @@ class DatabaseSeeder extends Seeder
      * @return void
      */
     public function run()
-    {
-        // Truncate tables, to avoid any unique erros.
-        // User::truncate();
-        // Post::truncate();
-
-        //  $user = User::create([
-        //      'name' => Str::random(10),
-        //      'email' => Str::random(10).'@swansea.ac.uk',
-        //      'password' => Hash::make('password')
-        //  ]);
-
-        //  Post::create([
-        //      'user_id' => $user->id,
-        //      'title' => 'New Post',
-        //      'excerpt' => 'Lorem ipsum dolar sit amet.',
-        //      'body' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce pellentesque, quam a commodo vehicula, lorem enim rhoncus urna, a ullamcorper turpis massa a nisl. Vivamus in luctus mauris. Etiam hendrerit sapien in enim congue ultrices. Aliquam erat volutpat. Proin at nibh tincidunt, cursus mauris in, sodales nulla. Ut at ante massa. Integer tortor lacus, cursus finibus blandit quis, egestas vel ex.'
-        //  ]);
-        
-        // User::factory(5)->has(Post::factory(2)->has(Comment::factory(2),'comments'),'posts')->create();
-        
+    { 
         $admin = User::create([
             'name' => 'Admin',
             'email' => 'admin@admin.com',
@@ -56,7 +37,7 @@ class DatabaseSeeder extends Seeder
         $test_profile = Profile::create([
             'user_id' => $test_user->id
         ]);
-        $user = User::factory()->hasProfile()->create();
-        $posts = Post::factory(2)->hasComments(3)->create();
+        // $user = User::factory(1)->hasProfile()->create();
+        //$posts = Post::factory(2)->hasComments(3)->create();
     }
 }

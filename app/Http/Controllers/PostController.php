@@ -39,19 +39,6 @@ class PostController extends Controller
         }
         return redirect()->route('posts.index')->with('error','Something went wrong');
     }
-    
-    // public function UserImageUpload($query)
-    // {
-    //     $image_name = Str::random(20);
-    //     $ext = strtolower($query->getClientOriginalExtension());
-    //     $image_full_name = $image_name.'.'.$ext;
-    //     $date = date("Y/m/d");
-    //     $upload_path = 'storage/images/'.$date.'/';
-    //     $image_url = $upload_path.$image_full_name;
-    //     $success = $query->move($upload_path,$image_full_name);
-    
-    //     return $image_url;
-    // }
 
     public function store(Request $request)
     {    

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Traits\UploadImage;
 use App\Models\Profile;
+use App\Models\Post;
 class ProfileController extends Controller
 {
     //
@@ -55,5 +56,12 @@ class ProfileController extends Controller
         ];
         
         return redirect()->route('posts.index')->with('message','Profile Updated!');
+    }
+
+    public function destroy(Profile $profile)
+    {
+        $user = $profile->user;
+        $user->delete();
+        return response()->json(['message' => 'Profile Deleted!']);
     }
 }

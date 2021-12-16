@@ -37,7 +37,7 @@
                             <div class="media m-0">
                                 {{-- <div class="d-flex mr-3"><a href="#"><img class="rounded-circle thumb48" src="img/user/06.jpg" alt="User"></a></div> --}}
                                 <div class="media-body p-2">
-                                <p class="m-0 text-bold">{{ $post->user->name }}</p><small class="text-muted"><em class="ion-earth text-muted mr-2"></em><span>{{ $post->created_at->diffForHumans() }}</span></small>
+                                <a class="m-0 text-bold" href="{{ route('profile.show',['profile'=>$post->user->profile->id])}}">{{ $post->user->name }}</a><br><small class="text-muted"><em class="ion-earth text-muted mr-2"></em><span>{{ $post->created_at->diffForHumans() }}</span></small>
                                 </div>
                             </div>
                             <div class="cardbox-body">
