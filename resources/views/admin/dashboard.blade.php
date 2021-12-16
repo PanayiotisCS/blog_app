@@ -9,8 +9,6 @@
             <p>Welcome back to your blog site.</p>
           </div>
           <div class="my-4">
-            <button class="btn btn-oval btn-primary btn-gradient mr-2">14 Messages</button>
-            <button class="btn btn-secondary btn-oval" type="button"><em class="ion-forward text-success mr-2 icon-lg"></em><span>View requests</span></button>
           </div>
           <div class="h-scroll">
             <div class="row">
