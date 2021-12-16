@@ -35,7 +35,11 @@
                             @endif
                             <!-- END dropdown-->
                             <div class="media m-0">
-                                {{-- <div class="d-flex mr-3"><a href="#"><img class="rounded-circle thumb48" src="img/user/06.jpg" alt="User"></a></div> --}}
+                                <div class="d-flex mr-3">
+                                @if ($post->user->profile->profile_path != null)
+                                    <a href="{{ route('profile.show',['profile'=>$post->user->profile->id])}}"><img class="rounded-circle thumb48" src="{{ asset($post->user->profile->profile_path) }}" alt="User"></a>        
+                                @endif
+                            </div>
                                 <div class="media-body p-2">
                                 <a class="m-0 text-bold" href="{{ route('profile.show',['profile'=>$post->user->profile->id])}}">{{ $post->user->name }}</a><br><small class="text-muted"><em class="ion-earth text-muted mr-2"></em><span>{{ $post->created_at->diffForHumans() }}</span></small>
                                 </div>
