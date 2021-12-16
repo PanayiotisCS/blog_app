@@ -75,22 +75,17 @@ class PostController extends Controller
         $attributes = request()->validate([
             'title' => 'required',
             'body'  => 'required',
+            'image_path' => 'image|mimes:png,jpg,gif'
         ]);
-
+        $filepath="";
         if(isset($attributes['image_path'])){
-            // $this->validate($request,[
-            //     'image_path' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            // ]);
-            Validator::make(request(),[
-                'image_path' => ['nullable','image','max:2048']
-            ]);
-            $attributes['image_path'] = $this->UserImageUpload(request()->file('image_path'));
+            $filepath = $this->UserImageUpload(request()->file('image_path'));
         }
         
         $post->user_id = auth()->id();
         $post->title = $attributes['title'];
         $post->body = $attributes['body'];
-        $post->image_path = $attributes['image_path'];
+        $post->image_path = $filepath;
         $post->save(); 
 
         return redirect()->route('posts.index')->with('message','Post Updated!');
