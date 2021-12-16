@@ -44,9 +44,6 @@
                             <img class="rounded-xl ml-6" width="100" src="{{ asset($post->image_path) }}" alt="MaterialImg">                            
                         @endif
                     </div>
-                    {{-- <div class="col-1">
-                        <img class="rounded-xl ml-6" width="50" src="{{ asset($post->image_path) }}" alt="MaterialImg">
-                    </div> --}}
                 </div>
               </div>
             </div>

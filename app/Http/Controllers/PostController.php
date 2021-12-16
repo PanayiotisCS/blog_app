@@ -5,13 +5,15 @@ namespace App\Http\Controllers;
 use App\Models\Like;
 use App\Models\Post;
 use App\Models\Comment;
+use App\Http\Traits\UploadImage;
 use Illuminate\Http\Request;
-use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Validator;
+
 class PostController extends Controller
 {
     //
+    use UploadImage;
     public function index()
     {
         return view('posts.index', ['posts' => Post::all()->sortByDesc('updated_at')]);
@@ -35,22 +37,21 @@ class PostController extends Controller
             ];
             return view('posts.show', ['data' => $data]);
         }
-        
         return redirect()->route('posts.index')->with('error','Something went wrong');
     }
     
-    public function UserImageUpload($query)
-    {
-        $image_name = Str::random(20);
-        $ext = strtolower($query->getClientOriginalExtension());
-        $image_full_name = $image_name.'.'.$ext;
-        $date = date("Y/m/d");
-        $upload_path = 'storage/images/'.$date.'/';
-        $image_url = $upload_path.$image_full_name;
-        $success = $query->move($upload_path,$image_full_name);
+    // public function UserImageUpload($query)
+    // {
+    //     $image_name = Str::random(20);
+    //     $ext = strtolower($query->getClientOriginalExtension());
+    //     $image_full_name = $image_name.'.'.$ext;
+    //     $date = date("Y/m/d");
+    //     $upload_path = 'storage/images/'.$date.'/';
+    //     $image_url = $upload_path.$image_full_name;
+    //     $success = $query->move($upload_path,$image_full_name);
     
-        return $image_url;
-    }
+    //     return $image_url;
+    // }
 
     public function store(Request $request)
     {    
